@@ -45,6 +45,5 @@ def run_once():
         print("No image found.")
 
 # TESTING
-if __name__ == "__main__":
     print("Put a mood or genre into input.txt and run this script.")
     run_once()
