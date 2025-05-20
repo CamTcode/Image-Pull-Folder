@@ -2,7 +2,7 @@ import requests
 import time
 import os
 
-UNSPLASH_ACCESS_KEY = '-5c124BZyGqc6wr5E2bY-xj3PkeGGGG0Eb-UgxzGLs0'  # 🔑 Replace with your real key
+UNSPLASH_ACCESS_KEY = '-5c124BZyGqc6wr5E2bY-xj3PkeGGGG0Eb-UgxzGLs0'  # Replace with your access key if needed
 
 INPUT_FILE = 'input.txt'
 OUTPUT_FILE = 'output.txt'
