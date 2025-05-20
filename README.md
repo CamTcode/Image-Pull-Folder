@@ -20,7 +20,7 @@ with open("output.txt", "r") as f:
     
 Communication Contract:
 input.txt	Input	Mood/genre from the caller
-output.txt	Output	Image URL returned from the service!
+output.txt	Output	Image URL returned from the Unsplash
 
 UML sequence diagram:
 https://github.com/user-attachments/assets/f7f6bf81-0925-422d-ad1f-1453425d1a7c
