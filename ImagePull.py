@@ -52,4 +52,7 @@ def watch_for_new_input():
 # TESTING
 if __name__ == "__main__":
     print("Put a mood or genre into input.txt and run this script.")
-    run_once()
+try:
+    watch_for_new_input()
+except Exception as e:
+    print(f"An error occurred: {e}")
