@@ -22,27 +22,32 @@ def search_unsplash_image(query):
     else:
         return None
 
-def run_once():
-    if not os.path.exists(INPUT_FILE):
-        print("Waiting for input.txt to be created...")
-        return
+def watch_for_new_input():
+    last_query = ""
 
-    with open(INPUT_FILE, 'r') as f:
-        query = f.read().strip()
+    print("Waiting for new input in input.txt...")
 
-    if not query:
-        print("No query found in input.txt.")
-        return
+    while True:
+        if os.path.exists(INPUT_FILE):
+            with open(INPUT_FILE, 'r') as f:
+                query = f.read().strip()
 
-    print(f"Searching Unsplash for: {query}")
-    image_url = search_unsplash_image(query)
+            # Check for new entry
+            if query and query != last_query:
+                print(f"New input detected: {query}")
+                image_url = search_unsplash_image(query)
 
-    if image_url:
-        with open(OUTPUT_FILE, 'w') as f:
-            f.write(image_url)
-        print(f"Image URL written to {OUTPUT_FILE}")
-    else:
-        print("No image found.")
+                if image_url:
+                    with open(OUTPUT_FILE, 'w') as f:
+                        f.write(image_url)
+                    print(f"Image URL written to {OUTPUT_FILE}")
+                else:
+                    print("No image found.")
+
+                last_query = query
+
+        time.sleep(2)  # Check every 2 seconds
+
 
 # TESTING
 if __name__ == "__main__":
